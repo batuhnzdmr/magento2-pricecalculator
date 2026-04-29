@@ -6,7 +6,6 @@ define([
     'use strict';
 
     return function (config, element) {
-        console.log("Batuhan: Modül JS başarıyla yüklendi, metinden izleme başlıyor (v2)...");
         
         var priceFormat = config.priceFormat;
 
@@ -20,7 +19,6 @@ define([
                 return parseFloat(fallbackPrice) || 0;
             }
 
-            // Örnek priceText: "₺18.400,00" veya "₺2.500"
             // İçindeki harf, sembol (₺) ve boşlukları sil; sadece rakam, virgül ve nokta kalsın.
             var cleanText = priceText.replace(/[^\d.,]/g, '');
 
@@ -40,17 +38,15 @@ define([
             var val = getRawPrice();
             if (val && val > 0) {
                 var disc = val * 0.90;
-                var inst = val / 9;
+                var inst = val / 6;
                 
                 $('#discounted-price-val').text(priceUtils.formatPrice(disc, priceFormat));
                 $('#installment-price-val').text(priceUtils.formatPrice(inst, priceFormat));
-                console.log("Batuhan: Hesaplama güncellendi. Metinden okunan saf fiyat: " + val);
             }
         }
 
         // 1. Seçeneklere tıklandığında tetikle
         $(document).on('click change', '.swatch-option, .product-custom-option, select.admin__control-select', function() {
-            console.log("Batuhan: Opsiyon değişti, yeni fiyat metni bekleniyor...");
             setTimeout(updateDisplay, 300);
             setTimeout(updateDisplay, 800);
         });

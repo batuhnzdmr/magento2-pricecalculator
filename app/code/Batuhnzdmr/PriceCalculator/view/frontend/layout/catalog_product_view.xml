@@ -3,9 +3,9 @@
     <body>
         <referenceContainer name="product.info.main">
             <block class="Magento\Framework\View\Element\Template" 
-                   name="batuhan.price.calculator" 
-                   template="Batuhan_PriceCalculator::custom_price.phtml" 
-                   after="product.info.overview" />
+                   name="batuhnzdmr.price.calculator" 
+                   template="Batuhnzdmr_PriceCalculator::custom_price.phtml" 
+                   before="product.info.overview" />
         </referenceContainer>
     </body>
 </page>
